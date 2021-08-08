@@ -40,7 +40,7 @@ def compute_performance_MA(ticker, ndays_momentum,ndays_resistance,
 
     mom_prev_below_res = False
     position_size = 0 # Cap the number of stocks
-    position_size_cap = 200
+    position_size_cap = 2000
     for i in range(len(ma_momentum)):
         mom = ma_momentum.iloc[i]
         res = ma_resistance.iloc[i]
@@ -67,5 +67,5 @@ def compute_performance_MA(ticker, ndays_momentum,ndays_resistance,
         
 
 logger = compute_performance_MA(ticker="aapl", ndays_momentum=20, ndays_resistance=100,
-        start_date="01/01/2018", end_date="01/01/2020")
+        start_date="01/01/2015", end_date="01/01/2020")
 logger.graph_statistics()
